@@ -1,10 +1,19 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
+- '2.7'
+- '3.4'
 install:
-  - "pip install -r requirements.txt"
-  - "pip install -e .[test]"
+- pip install -r requirements.txt
+- pip install -e .[test]
 script:
-  - py.test
+- py.test
 sudo: false
+deploy:
+  provider: pypi
+  user: devseed
+  password:
+    secure: lWzdvxahp+quLTfyDwx9NU7P4k8T3exhUvkzKdyJ7L4VDd4rNnDUnqK/bPaNMYGvJkrQS0QNPWH5AeN4sP8Incil/yDTNmKUxaZ8wIK8luYtP4ADKZvz7ANef+JAUiCvNL0E2GPyu0ZQGofFJu4wex/RN2Myk6+khyKq2mDp8/ssjyUDK2COEhjecuLiRBohC905P9lVy7kZ2z0qGQxE+0s/AfYV0XnKpbQY9iy8Uk9nZSwc8pq1gv/cGqAMdztSTnDsirLk4311VOCZp8jjIyzSVmg7AkJafHt2FNAtyqAkMQ6sp+f55oOZEC0RJVumx9JAwLJhLC/jOHPJ1uNClhr45FkdvE2mIBTZaI5yvoytu69vsNsp1qhIOxKN27lPMlfsoFIJb7uNhJrHxZkeW0E7sWFciWJFXsftMx6GlcHSZGJNAmWkF5Vfm3ikp3rTtq0xOzImqHd8xm9I0H5AoGno7VOHJ+ka1DrRSdwos91xMDME16yiuUTmAdIsdDpZMCz0qwRjHdEh/9UyzJNLo2RyIKUT6+RwaXN/SzefL/HJBjpDOYU1vOUH0i4yA9F9w+U+39TPKd/5quT9QXCmBSHTaKBkBxUtv2PrfdUO1JeJljKnEFyc5a2MHk/ipdwVe6yGUy7SaWwDRvedmUY0JhmxVTzUNohEonLbFusNpHU=
+  on:
+    distributions: sdist bdist_wheel
+    repo: developmentseed/usgs
+    branch: master
