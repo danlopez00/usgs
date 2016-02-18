@@ -17,14 +17,14 @@ with open('usgs/__init__.py') as f:
             continue
 
 
-setup(name='usgs',
+setup(name='usgs2',
       version=version,
       description=u"Access the USGS inventory service",
       long_description=long_description,
       classifiers=[],
       keywords='',
-      author=u"Amit Kapadia",
-      author_email='amit@planet.com',
+      author=u"Amit Kapadia, Alireza J",
+      author_email='amit@planet.com, alireza@developmentseed.org',
       url='https://github.com/mapbox/usgs',
       license='MIT',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
